@@ -18,7 +18,7 @@ export default function Home() {
 
     // document.addEventListener("contextmenu", handleContextMenu);
 
-    document.documentElement.requestFullscreen().catch((e) => {
+    document?.documentElement?.requestFullscreen().catch((e) => {
       console.log("Error attempting to enable full-screen mode:", e);
     });
 

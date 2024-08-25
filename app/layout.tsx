@@ -21,6 +21,22 @@ export default function RootLayout({
         {/* link manifest.json */}
         <link rel="manifest" href="/manifest.json" />
         {/* https://github.com/GoogleChromeLabs/pwacompat */}
+        <script
+          async
+          src="https://unpkg.com/pwacompat"
+          crossOrigin="anonymous"
+        ></script>
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1"
+        />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>

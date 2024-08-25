@@ -14,8 +14,15 @@ export default function Home() {
   const [showFullScreenButton, setShowFullScreenButton] = useState(true);
 
   const handleFullScreen = () => {
+    // debugger;
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen().catch((e) => {
+        console.log("Error attempting to enable full-screen mode:", e);
+      });
+      // Hide the button after requesting fullscreen
+      setShowFullScreenButton(false);
+    } else if (document.documentElement.webkitEnterFullScreen) {
+      document.documentElement.webkitEnterFullScreen().catch((e) => {
         console.log("Error attempting to enable full-screen mode:", e);
       });
       // Hide the button after requesting fullscreen

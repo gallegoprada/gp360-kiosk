@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "GP 360 - Kiosk",
-  description: "Kiosk de Gallego Prada 360",
-};
+// export const metadata: Metadata = {
+//   title: "GP 360 - Kiosk",
+//   description: "Kiosk de Gallego Prada 360",
+// };
 
 export default function RootLayout({
   children,

@@ -12,15 +12,15 @@ import Button from "./components/button";
 export default function Home() {
   useEffect(() => {
     // Disable context menus across the entire app
-    const handleContextMenu = (event: MouseEvent) => {
-      event.preventDefault();
-    };
+    // const handleContextMenu = (event: MouseEvent) => {
+    //   event.preventDefault();
+    // };
 
     // document.addEventListener("contextmenu", handleContextMenu);
 
-    // document.documentElement.requestFullscreen().catch((e) => {
-    //   console.log("Error attempting to enable full-screen mode:", e);
-    // });
+    document.documentElement.requestFullscreen().catch((e) => {
+      console.log("Error attempting to enable full-screen mode:", e);
+    });
 
     // return () => {
     //   document.removeEventListener("contextmenu", handleContextMenu);

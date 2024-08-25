@@ -14,20 +14,18 @@ export default function Home() {
   const [showFullScreenButton, setShowFullScreenButton] = useState(true);
 
   const handleFullScreen = () => {
+    const docElement = document?.documentElement;
     // debugger;
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen().catch((e) => {
-        console.log("Error attempting to enable full-screen mode:", e);
-      });
-      // Hide the button after requesting fullscreen
-      setShowFullScreenButton(false);
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen().catch((e) => {
-        console.log("Error attempting to enable full-screen mode:", e);
-      });
-      // Hide the button after requesting fullscreen
-      setShowFullScreenButton(false);
+    if (docElement) {
+      if (docElement.requestFullscreen) {
+        docElement.requestFullscreen();
+      } else if (docElement.webkitRequestFullscreen) {
+        docElement.webkitRequestFullscreen();
+      }
     }
+
+    // Hide the button after requesting fullscreen
+    setShowFullScreenButton(false);
   };
 
   // useEffect(() => {
@@ -45,14 +43,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern bg-cover bg-center">
-      {showFullScreenButton && (
+      {showFullScreenButton ? (
         <button
           onClick={handleFullScreen}
           className="mb-4 p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-150 ease-in-out"
         >
           Enter Fullscreen
         </button>
-      )}
+      ) : null}
       <div className="flex justify-start items-end space-x-6">
         <Button
           text="Como Funciona"

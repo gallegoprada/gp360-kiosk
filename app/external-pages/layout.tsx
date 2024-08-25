@@ -14,10 +14,14 @@ export default function ExternalWrapperLayout({
   children: React.ReactNode;
 }>) {
   const [videoContainerHeight, setVideoContainerHeight] = useState(
-    Number(window.innerHeight - VIDEO_FRAME_SIZE)
+    Number(
+      typeof window !== "undefined" ? window.innerHeight - VIDEO_FRAME_SIZE : 0
+    )
   );
   const [videoContainerWidth, setVideoContainerWidth] = useState(
-    Number(window.innerWidth - VIDEO_FRAME_SIZE)
+    Number(
+      typeof window !== "undefined" ? window.innerWidth - VIDEO_FRAME_SIZE : 0
+    )
   );
 
   const router = useRouter();

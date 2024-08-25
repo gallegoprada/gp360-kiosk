@@ -10,10 +10,14 @@ const VIDEO_FRAME_SIZE = 150;
 
 export default function ComoFuncionaVideo() {
   const [videoContainerHeight, setVideoContainerHeight] = useState(
-    Number(window.innerHeight - VIDEO_FRAME_SIZE)
+    Number(
+      typeof window !== "undefined" ? window.innerHeight - VIDEO_FRAME_SIZE : 0
+    )
   );
   const [videoContainerWidth, setVideoContainerWidth] = useState(
-    Number(window.innerWidth - VIDEO_FRAME_SIZE)
+    Number(
+      typeof window !== "undefined" ? window.innerWidth - VIDEO_FRAME_SIZE : 0
+    )
   );
 
   const router = useRouter();

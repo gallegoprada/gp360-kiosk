@@ -4,22 +4,22 @@
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#22232b",
-  "orientation": "landscape-primary"
-  //   "icons": [
-  //     {
-  //       "src": "/AlterZ96.png",
-  //       "type": "image/png",
-  //       "sizes": "96x96"
-  //     },
-  //     {
-  //       "src": "/AlterZ192.png",
-  //       "type": "image/png",
-  //       "sizes": "192x192"
-  //     },
-  //     {
-  //       "src": "/AlterZ512.png",
-  //       "type": "image/png",
-  //       "sizes": "512x512"
-  //     }
-  //   ]
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/next.svg",
+      "type": "image/svg",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/next.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/next.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ]
 }

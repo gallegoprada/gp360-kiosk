@@ -5,41 +5,41 @@ import { useRouter } from "next/navigation";
 import NavButtonsWrapper from "../components/navButtonsWrapper";
 
 import ReactPlayer from "react-player/youtube";
-const VIDEO_FRAME_SIZE = 150;
+// const VIDEO_FRAME_SIZE = 150;
 
 export default function ComoFuncionaVideo() {
-  const [videoContainerHeight, setVideoContainerHeight] = useState(
-    Number(
-      typeof window !== "undefined" ? window.innerHeight - VIDEO_FRAME_SIZE : 0
-    )
-  );
-  const [videoContainerWidth, setVideoContainerWidth] = useState(
-    Number(
-      typeof window !== "undefined" ? window.innerWidth - VIDEO_FRAME_SIZE : 0
-    )
-  );
+  //   const [videoContainerHeight, setVideoContainerHeight] = useState(
+  //     Number(
+  //       typeof window !== "undefined" ? window.innerHeight - VIDEO_FRAME_SIZE : 0
+  //     )
+  //   );
+  //   const [videoContainerWidth, setVideoContainerWidth] = useState(
+  //     Number(
+  //       typeof window !== "undefined" ? window.innerWidth - VIDEO_FRAME_SIZE : 0
+  //     )
+  //   );
 
   const router = useRouter();
 
-  useEffect(() => {
-    // Handle screen resizing
-    const handleResize = () => {
-      setVideoContainerHeight(Number(window.innerHeight - VIDEO_FRAME_SIZE));
-      setVideoContainerWidth(Number(window.innerWidth - VIDEO_FRAME_SIZE));
-    };
+  //   useEffect(() => {
+  //     // Handle screen resizing
+  //     const handleResize = () => {
+  //       setVideoContainerHeight(Number(window.innerHeight - VIDEO_FRAME_SIZE));
+  //       setVideoContainerWidth(Number(window.innerWidth - VIDEO_FRAME_SIZE));
+  //     };
 
-    window.addEventListener("resize", handleResize);
+  //     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [videoContainerHeight, videoContainerWidth]);
+  //     return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //     };
+  //   }, [videoContainerHeight, videoContainerWidth]);
 
   return (
     <NavButtonsWrapper>
       <ReactPlayer
-        height={videoContainerHeight}
-        width={videoContainerWidth}
+        // height={videoContainerHeight}
+        // width={videoContainerWidth}
         playing={true}
         onEnded={() => {
           router.push("/");

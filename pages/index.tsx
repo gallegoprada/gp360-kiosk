@@ -7,18 +7,18 @@ import {
 import Button from "../components/button";
 
 export default function Home() {
-  useEffect(() => {
-    // Disable context menus across the entire app
-    const handleContextMenu = (event: MouseEvent) => {
-      event.preventDefault();
-    };
+  //   useEffect(() => {
+  //     // Disable context menus across the entire app
+  //     const handleContextMenu = (event: MouseEvent) => {
+  //       event.preventDefault();
+  //     };
 
-    document.addEventListener("contextmenu", handleContextMenu);
+  //     document.addEventListener("contextmenu", handleContextMenu);
 
-    return () => {
-      document.removeEventListener("contextmenu", handleContextMenu);
-    };
-  }, []);
+  //     return () => {
+  //       document.removeEventListener("contextmenu", handleContextMenu);
+  //     };
+  //   }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern bg-cover bg-center">

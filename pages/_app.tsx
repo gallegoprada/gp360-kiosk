@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import React from "react";
-// import "styles/globals.css";
+import "../styles/globals.css";
 // import { theme } from 'styles/theme'
 
 const Gp360Kiosk = ({ Component, pageProps }: AppProps) => {

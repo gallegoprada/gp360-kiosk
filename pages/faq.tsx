@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import NavButtonsWrapper from "../components/navButtonsWrapper";
 import IdleTimerWrapper from "../components/idleTimerWrapper";
@@ -45,8 +44,6 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
 };
 
 export default function Faq() {
-  const router = useRouter();
-
   return (
     <NavButtonsWrapper>
       <FaqContainer {...({} as FaqContainerProps)} />

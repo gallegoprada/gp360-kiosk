@@ -49,7 +49,7 @@ export default function Faq() {
 
   return (
     <NavButtonsWrapper>
-      <FaqContainer />
+      <FaqContainer {...({} as FaqContainerProps)} />
     </NavButtonsWrapper>
   );
 }

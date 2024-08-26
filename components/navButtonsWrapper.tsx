@@ -9,16 +9,9 @@ import ReactPlayer from "react-player/youtube";
 const MARGIN = 24;
 const VIDEO_FRAME_SIZE = MARGIN + 35 + MARGIN + MARGIN;
 
-interface EnhancedChildProps {
-  childContainerHeight: number;
-  childContainerWidth: number;
-}
-
 export default function NavButtonsWrapper({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const [childContainerHeight, setchildContainerHeight] = useState(
     Number(
       typeof window !== "undefined" ? window.innerHeight - VIDEO_FRAME_SIZE : 0
@@ -42,19 +35,16 @@ export default function NavButtonsWrapper({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [childContainerHeight, childContainerWidth]);
+  }, []);
 
-  // Assuming the children could be any valid React node
-  const enhancedChildren: ReactNode = React.Children.map(children, (child) => {
-    // Ensure the child is a valid React element before cloning
-    if (React.isValidElement<EnhancedChildProps>(child)) {
-      return React.cloneElement(child, {
-        childContainerHeight,
-        childContainerWidth,
-      });
-    }
-    return child;
-  });
+  const childProps = {
+    childContainerHeight, // Example static value
+    childContainerWidth, // Example static value
+  };
+
+  const enhancedChildren = React.Children.map(children, (child) =>
+    React.isValidElement(child) ? React.cloneElement(child, childProps) : child
+  );
 
   return (
     <div

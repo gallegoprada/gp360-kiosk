@@ -7,18 +7,18 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/next.svg",
-      "type": "image/svg",
+      "src": "/gp360kiosk96.png",
+      "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "/next.svg",
-      "type": "image/svg",
+      "src": "/gp360kiosk192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/next.svg",
-      "type": "image/svg",
+      "src": "/gp360kiosk512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ]

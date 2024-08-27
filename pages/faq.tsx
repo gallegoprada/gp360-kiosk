@@ -28,12 +28,13 @@ const IframeContainer: React.FC<IframeContainerProps> = ({
       let startX = 0;
       let startY = 0;
 
-      const handleTouchStart = (e) => {
+      // Use React.TouchEvent<HTMLDivElement> if handling events on a div
+      const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
         startX = e.touches[0].pageX;
         startY = e.touches[0].pageY;
       };
 
-      const handleTouchMove = (e) => {
+      const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
         const moveX = e.touches[0].pageX;
         const moveY = e.touches[0].pageY;
 
@@ -45,16 +46,26 @@ const IframeContainer: React.FC<IframeContainerProps> = ({
         }
       };
 
-      iframeWrapper.addEventListener("touchstart", handleTouchStart, {
-        passive: false,
-      });
-      iframeWrapper.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
-      });
+      if (iframeWrapper) {
+        iframeWrapper.addEventListener("touchstart", handleTouchStart as any, {
+          passive: false,
+        });
+        iframeWrapper.addEventListener("touchmove", handleTouchMove as any, {
+          passive: false,
+        });
+      }
 
       return () => {
-        iframeWrapper.removeEventListener("touchstart", handleTouchStart);
-        iframeWrapper.removeEventListener("touchmove", handleTouchMove);
+        if (iframeWrapper) {
+          iframeWrapper.removeEventListener(
+            "touchstart",
+            handleTouchStart as any
+          );
+          iframeWrapper.removeEventListener(
+            "touchmove",
+            handleTouchMove as any
+          );
+        }
       };
     }
   }, []);

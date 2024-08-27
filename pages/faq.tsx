@@ -29,6 +29,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
           position: "relative",
           height: childContainerHeight,
           width: childContainerWidth,
+          overflowX: "hidden",
         }}
       >
         {isLoading && (
@@ -39,6 +40,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
         <iframe
           id={"iframe-content"}
           className="w-full h-full rounded-md"
+          style={{ overflowX: "hidden" }}
           height={childContainerHeight}
           width={childContainerWidth}
           src="https://gallegoprada360.com/faq/"

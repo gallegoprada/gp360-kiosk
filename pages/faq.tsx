@@ -56,7 +56,11 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
           <iframe
             id={"iframe-content"}
             className="w-full h-full rounded-md"
-            style={{ overflowX: "hidden", touchAction: "pan-y" }}
+            style={{
+              overflowX: "hidden",
+              touchAction: "pan-y",
+              pointerEvents: "none",
+            }}
             height={childContainerHeight}
             width={childContainerWidth}
             src="https://gallegoprada360.com/faq/"

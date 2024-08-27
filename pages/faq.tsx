@@ -22,27 +22,42 @@ const IframeContainer: React.FC<IframeContainerProps> = ({
   onFinishLoading,
 }) => {
   useEffect(() => {
-    const iframeWrapper = document?.querySelector("#iframe-wrapper");
+    const iframeWrapper = document.querySelector(".iframe-wrapper");
 
     if (iframeWrapper) {
-      console.log("iframeWrapper", iframeWrapper);
-      iframeWrapper.addEventListener(
-        "touchstart",
-        function (e) {
-          e.preventDefault(); // Prevent default touch behavior
-        },
-        { passive: false }
-      );
+      let startX = 0;
+      let startY = 0;
 
-      iframeWrapper.addEventListener(
-        "touchmove",
-        function (e) {
-          e.preventDefault(); // Prevent moving touch behavior
-        },
-        { passive: false }
-      );
+      const handleTouchStart = (e) => {
+        startX = e.touches[0].pageX;
+        startY = e.touches[0].pageY;
+      };
+
+      const handleTouchMove = (e) => {
+        const moveX = e.touches[0].pageX;
+        const moveY = e.touches[0].pageY;
+
+        const diffX = Math.abs(moveX - startX);
+        const diffY = Math.abs(moveY - startY);
+
+        if (diffX > diffY) {
+          e.preventDefault();
+        }
+      };
+
+      iframeWrapper.addEventListener("touchstart", handleTouchStart, {
+        passive: false,
+      });
+      iframeWrapper.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+
+      return () => {
+        iframeWrapper.removeEventListener("touchstart", handleTouchStart);
+        iframeWrapper.removeEventListener("touchmove", handleTouchMove);
+      };
     }
-  });
+  }, []);
 
   return (
     <iframe

@@ -42,7 +42,7 @@ const ComoFuncionaContainer: React.FC<ComoFuncionaContainer> = ({
         onEnded={() => {
           router.push("/");
         }}
-        url="https://www.youtube.com/watch?v=iHibnmosKkM?autoplay=1&mute=1"
+        url="https://youtu.be/61ZrtSxd6kg?autoplay=1&mute=1"
       />
     </div>
   );

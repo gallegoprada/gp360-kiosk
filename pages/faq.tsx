@@ -21,6 +21,8 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
       style={{
         height: childContainerHeight,
         width: childContainerWidth,
+        overflowX: "hidden",
+        touchAction: "pan-y",
       }}
     >
       {/* <IdleTimerWrapper> */}
@@ -30,6 +32,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
           height: childContainerHeight,
           width: childContainerWidth,
           overflowX: "hidden",
+          touchAction: "pan-y",
         }}
       >
         {isLoading && (
@@ -40,7 +43,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
         <iframe
           id={"iframe-content"}
           className="w-full h-full rounded-md"
-          style={{ overflowX: "hidden" }}
+          style={{ overflowX: "hidden", touchAction: "pan-y" }}
           height={childContainerHeight}
           width={childContainerWidth}
           src="https://gallegoprada360.com/faq/"

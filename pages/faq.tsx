@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 
 import NavButtonsWrapper from "../components/navButtonsWrapper";
 import IdleTimerWrapper from "../components/idleTimerWrapper";
@@ -9,6 +9,59 @@ interface FaqContainerProps {
   childContainerHeight: number;
   childContainerWidth: number;
 }
+
+interface IframeContainerProps {
+  childContainerHeight: number;
+  childContainerWidth: number;
+  onFinishLoading: any;
+}
+
+const IframeContainer: React.FC<IframeContainerProps> = ({
+  childContainerHeight,
+  childContainerWidth,
+  onFinishLoading,
+}) => {
+  useEffect(() => {
+    const iframeWrapper = document?.querySelector("#iframe-wrapper");
+
+    if (iframeWrapper) {
+      console.log("iframeWrapper", iframeWrapper);
+      iframeWrapper.addEventListener(
+        "touchstart",
+        function (e) {
+          e.preventDefault(); // Prevent default touch behavior
+        },
+        { passive: false }
+      );
+
+      iframeWrapper.addEventListener(
+        "touchmove",
+        function (e) {
+          e.preventDefault(); // Prevent moving touch behavior
+        },
+        { passive: false }
+      );
+    }
+  });
+
+  return (
+    <iframe
+      id={"iframe-content"}
+      className="w-full h-full rounded-md"
+      style={{
+        overflowX: "hidden",
+        touchAction: "pan-y",
+        pointerEvents: "none",
+      }}
+      height={childContainerHeight}
+      width={childContainerWidth}
+      src="https://gallegoprada360.com/faq/"
+      frameBorder="0"
+      allowFullScreen
+      onLoad={() => onFinishLoading()}
+    ></iframe>
+  );
+};
 
 const FaqContainer: React.FC<FaqContainerProps> = ({
   childContainerHeight,
@@ -27,6 +80,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
     >
       {/* <IdleTimerWrapper> */}
       <div
+        id={"iframe-wrapper"}
         style={{
           position: "relative",
           height: childContainerHeight,
@@ -42,33 +96,11 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
         )} */}
         {/*  */}
 
-        <div
-          // id={"iframe-content"}
-          className="w-full h-full rounded-md"
-          style={{ overflowX: "hidden", touchAction: "pan-y" }}
-          // height={childContainerHeight}
-          // width={childContainerWidth}
-          // src="https://gallegoprada360.com/faq/"
-          // frameBorder="0"
-          // allowFullScreen
-          // onLoad={() => setIsLoading(false)}
-        >
-          <iframe
-            id={"iframe-content"}
-            className="w-full h-full rounded-md"
-            style={{
-              overflowX: "hidden",
-              touchAction: "pan-y",
-              pointerEvents: "none",
-            }}
-            height={childContainerHeight}
-            width={childContainerWidth}
-            src="https://gallegoprada360.com/faq/"
-            frameBorder="0"
-            allowFullScreen
-            onLoad={() => setIsLoading(false)}
-          ></iframe>
-        </div>
+        <IframeContainer
+          childContainerHeight={childContainerHeight}
+          childContainerWidth={childContainerWidth}
+          onFinishLoading={() => setIsLoading(false)}
+        />
       </div>
       {/* </IdleTimerWrapper> */}
     </div>

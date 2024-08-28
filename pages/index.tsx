@@ -21,7 +21,7 @@ export default function Home() {
   //   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern ">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern bg-cover bg-center">
       <div className="flex justify-start items-end space-x-6">
         <Button
           text="Como Funciona"

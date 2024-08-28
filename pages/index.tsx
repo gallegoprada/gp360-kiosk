@@ -54,7 +54,7 @@ export default function Home() {
         />
       </div>
       {/* <div className="m-4" /> */}
-      <div className="flex w-full ml-8 mt-8">
+      <div className="flex w-full ml-8 mt-20">
         <Link
           href={"/info-kids"}
           className="flex flex-row items-end justify-end rounded-lg shadow"

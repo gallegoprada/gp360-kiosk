@@ -15,3 +15,8 @@ body {
   padding: 0;
   overflow: hidden; /* Prevent scrollbars */
 }
+
+.bg-hero-pattern {
+  background-image: url("https://gallegoprada360.com/wp-content/uploads/2020/09/fde1daa2-f639-408a-b603-bd9b30a24c9e.webp");
+  background-color: #ececec; /* Fallback color if the image fails to load */
+}

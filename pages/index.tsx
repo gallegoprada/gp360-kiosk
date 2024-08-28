@@ -22,7 +22,7 @@ export default function Home() {
   //   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern bg-cover bg-center ">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-hero-pattern bg-cover bg-center opacity-80">
       <div className="flex justify-start items-end space-x-8 space-y-8">
         <img
           src="/gp360-logo.png"

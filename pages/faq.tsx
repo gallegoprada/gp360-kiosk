@@ -36,7 +36,7 @@ const FaqContainer: React.FC<FaqContainerProps> = ({
         }}
       >
         {isLoading && (
-          <div className="w-full h-full rounded-md flex flex-col justify-center items-center block p-6 text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 opacity-80 ">
+          <div className="w-full h-full rounded-md flex flex-col justify-center items-center block p-6 text-gray-900  bg-white border border-gray-200 rounded-lg shadow  opacity-80 ">
             Loading...
           </div>
         )}

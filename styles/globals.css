@@ -19,4 +19,11 @@ body {
 .bg-hero-pattern {
   background-image: url("https://gallegoprada360.com/wp-content/uploads/2020/09/fde1daa2-f639-408a-b603-bd9b30a24c9e.webp");
   background-color: #ececec; /* Fallback color if the image fails to load */
+  background-position: center; /* Centers the background image */
+  background-size: cover; /* Cover the entire container */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  -webkit-background-size: cover; /* For older WebKit browsers */
+  -moz-background-size: cover; /* For older Mozilla browsers */
+  -o-background-size: cover; /* For older Opera browsers */
+  background-size: cover;
 }

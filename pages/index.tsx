@@ -3,6 +3,7 @@ import {
   InformationCircleIcon,
   UserPlusIcon,
   QuestionMarkCircleIcon,
+  ArrowsRightLeftIcon,
 } from "@heroicons/react/24/outline";
 import Button from "../components/button";
 
@@ -29,6 +30,11 @@ export default function Home() {
           link="/como-funciona"
         />
         <Button text="Darme de Alta" heroIcon={UserPlusIcon} link="/alta" />
+        <Button
+          text="cambia tu Tarifa"
+          heroIcon={ArrowsRightLeftIcon}
+          link="/cambia-tu-tarifa"
+        />
         <Button
           text="Preguntas Frecuentes"
           heroIcon={QuestionMarkCircleIcon}

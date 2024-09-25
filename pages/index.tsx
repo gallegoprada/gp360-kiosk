@@ -5,6 +5,8 @@ import {
   UserPlusIcon,
   QuestionMarkCircleIcon,
   ArrowsRightLeftIcon,
+  PuzzlePieceIcon,
+  BoltIcon,
 } from "@heroicons/react/24/outline";
 import Button from "../components/button";
 
@@ -40,6 +42,11 @@ export default function Home() {
           link="/como-funciona"
         />
         <Button text="Darme de Alta" heroIcon={UserPlusIcon} link="/alta" />
+        <Button
+          text="Clase de Prueba"
+          heroIcon={BoltIcon}
+          link="/clase-prueba"
+        />
       </div>
       <div className="flex w-full justify-center items-end space-x-8 space-y-8">
         <Button
@@ -52,9 +59,11 @@ export default function Home() {
           heroIcon={QuestionMarkCircleIcon}
           link="/faq"
         />
+        <Button text="Info Kids" heroIcon={PuzzlePieceIcon} link="/info-kids" />
       </div>
+
       {/* <div className="m-4" /> */}
-      <div className="flex w-full ml-8 mt-20">
+      {/* <div className="flex w-full ml-8 mt-20">
         <Link
           href={"/info-kids"}
           className="flex flex-row items-end justify-end rounded-lg shadow"
@@ -76,7 +85,7 @@ export default function Home() {
             INFO KIDS
           </div>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }
